@@ -1,0 +1,25 @@
+spring:     
+  application: 
+    name: demo 
+
+---
+spring: 
+  config:
+    activate:
+      on-profile: dev
+
+server: 
+  port: 9090
+
+---
+spring: 
+  config:
+    activate:
+      on-profile: test
+
+server: 
+  port: 9000
+
+
+
+
