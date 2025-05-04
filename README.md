@@ -8,3 +8,13 @@ Model Java classes
 View Rest API json 
 Controller Request/Response 
 
+This application is to track information of the runners : tracking each run with run id , Localdatetime, miles , inddor/outdoor
+
+REST API 
+
+DATABASE H2, postgressSQL
+
+Testing 
+
+implemnenting docker and kubernetes 
+
