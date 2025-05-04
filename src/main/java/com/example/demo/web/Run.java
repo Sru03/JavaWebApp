@@ -1,7 +1,6 @@
 package com.example.demo.web;
 import com.example.demo.web.Location;
 import java.time.LocalDateTime;
-
 import java.time.temporal.ChronoUnit;
 import org.springframework.stereotype.Repository;
 

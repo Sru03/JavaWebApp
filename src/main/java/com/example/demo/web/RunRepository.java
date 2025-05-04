@@ -6,7 +6,6 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Repository;
-
 import jakarta.annotation.PostConstruct;
 
 @Repository
@@ -18,13 +17,31 @@ public class RunRepository {
         return runs;
     }
 
-    Run findById(Integer id){
+    Optional <Run> findById(Integer id){
         return runs.stream()
                .filter(run -> run.id() == id)
-               .findFirst()
-               .get();
-
+               .findFirst();            
     }
+
+    //to create run 
+     void create(Run run){
+        runs.add(run);
+     }
+
+     //updating the run by passing run and id 
+     void update(Run run, Integer id){
+        Optional<Run> existingRun = findById(id);
+        if(existingRun.isPresent()){
+            runs.set(runs.indexOf(existingRun.get()),run);
+        }
+     }
+
+     //delete the run by passing id
+     void delete(Integer id){
+        runs.removeIf(run -> run.id().equals(id));
+
+     }
+
 
     @PostConstruct
     private void init() {
