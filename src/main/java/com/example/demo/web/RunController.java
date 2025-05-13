@@ -30,35 +30,35 @@ public class RunController {
         return runRepository.findAll();
     }
 
-    // // read = get
-    // @GetMapping("/{id}")
-    // Run findById(@PathVariable Integer id) {
-    //     Optional<Run> run = runRepository.findById(id);
-    //     if (run.isEmpty()) {
-    //         throw new RunNotFoundException();
-    //     }
-    //     return run.get();
-    // }
+    // read = get
+    @GetMapping("/{id}")
+    Run findById(@PathVariable Integer id) {
+        Optional<Run> run = runRepository.findById(id);
+        if (run.isEmpty()) {
+            throw new RunNotFoundException();
+        }
+        return run.get();
+    }
 
-    // @ResponseStatus(HttpStatus.CREATED)//201
-    // // create one = post
-    // @PostMapping("")
-    // void create(@Valid @RequestBody Run run) {
-    //     runRepository.create(run);
-    // }
+    @ResponseStatus(HttpStatus.CREATED)//201
+    // create one = post
+    @PostMapping("")
+    void create(@Valid @RequestBody Run run) {
+        runRepository.create(run);
+    }
 
-    // @ResponseStatus(HttpStatus.NO_CONTENT)//204
-    // // update one = put
-    // @PutMapping("/{id}")
-    // void update(@RequestBody Run run, @PathVariable Integer id){
-    //  runRepository.update(run, id);
-    // }
+    @ResponseStatus(HttpStatus.NO_CONTENT)//204
+    // update one = put
+    @PutMapping("/{id}")
+    void update(@RequestBody Run run, @PathVariable Integer id){
+     runRepository.update(run, id);
+    }
 
-    // @ResponseStatus(HttpStatus.NO_CONTENT)
-    // // delete one = delete/ remove
-    // @DeleteMapping("/{id}")
-    // void delete(@PathVariable Integer id){
-    //     runRepository.delete(id);
-    // }
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    // delete one = delete/ remove
+    @DeleteMapping("/{id}")
+    void delete(@PathVariable Integer id){
+        runRepository.delete(id);
+    }
 
 }
