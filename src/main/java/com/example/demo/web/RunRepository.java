@@ -58,37 +58,29 @@ public class RunRepository {
 
        }
 
+       public void delete(Integer id){
+        var updated = jdbcClient.sql("delete from run where id = :id")
+                .param("id", id)
+                .update();
+
+                Assert.state(updated==1, "Fsiled to delete run " + id);
+       }
+
+       public int count() {return jdbcClient.sql("Select * from run").query().listOfRows().size();}
+
+       public void saveAll(List<Run> runs){
+        runs.stream().forEach(this::create);// save all method if we wanna save bunch of them 
+       }
+
+       public List<Run> findByLocation(String location){
+        return jdbcClient.sql("select * from run where location = :location ")
+        .param("location", location )
+        .query(Run.class)
+        .list(); // custom query hey find me all the runs by location 
+
+    }
+
       
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     // private List<Run> runs = new ArrayList();
 
