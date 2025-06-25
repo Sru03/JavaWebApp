@@ -1,3 +1,10 @@
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui: 
+    enabled: true
+     
 spring:     
   application: 
     name: demo 
@@ -10,11 +17,19 @@ spring:
   h2:
     console:
       enabled: true
+
+  web: 
+    resources:
+      add-mappings: false
     
   
 
 server: 
   port: 9090
+
+vaadin:
+  url-mapping: /vaadin/*
+  
 
 
 
