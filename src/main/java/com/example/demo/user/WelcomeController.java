@@ -14,7 +14,7 @@ public class WelcomeController {
 
     @GetMapping("/welcome")
     public String welcome(){
-        return "Welcome to Spring Boot world";
+        return "Welcome to Commit Message Editor";
     }
     
 }
