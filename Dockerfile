@@ -1,4 +1,4 @@
-FROM openjdk:17-jdk-alphine
+FROM eclipse-temurin:25-jdk
 
 VOLUME /tmp
 
